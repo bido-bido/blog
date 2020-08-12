@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Bido\User\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use Bido\User\Rules\ValidPassword;

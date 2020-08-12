@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Bido\User\Tests\Feature;
 
 use Bido\User\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
