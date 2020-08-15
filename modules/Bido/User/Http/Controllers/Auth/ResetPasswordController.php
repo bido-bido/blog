@@ -2,9 +2,12 @@
 
 namespace Bido\User\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
+use Bido\User\Services\UserService;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Bido\User\Http\Requests\ChangePasswordRequest;
 
 class ResetPasswordController extends Controller
 {
@@ -32,5 +35,12 @@ class ResetPasswordController extends Controller
     public function showResetForm()
     {
         return view('User::Front.passwords.reset');
+    }
+
+    public function reset(ChangePasswordRequest $request)
+    {
+        UserService::changePassword(auth()->user(), $request->password);
+
+        return redirect()->route('home');
     }
 }

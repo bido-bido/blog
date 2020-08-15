@@ -3,13 +3,14 @@
 @section('content')
 
     <div class="account">
-        <form action="{{route('verification.verify')}}" class="form" method="post">
+        <form action="{{route('password.checkVerifyCode')}}" class="form" method="post">
             @csrf
+            <input type="hidden" name="email" value="{{request()->email}}">
             <a class="account-logo" href="/">
                 <img src="/img/weblogo.png" alt="">
             </a>
             <div class="card-header">
-                <p class="activation-code-title">کد فرستاده شده به ایمیل <span>Mohammadniko3@gmail.com</span> را وارد کنید</p>
+                <p class="activation-code-title">کد فرستاده شده به ایمیل <span>{{request()->email}}</span> را وارد کنید</p>
             </div>
             <div class="form-content form-content1">
                 <input name="verify_code" required class="activation-code-input" placeholder="فعال سازی">

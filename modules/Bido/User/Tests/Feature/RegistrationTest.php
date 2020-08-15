@@ -3,6 +3,7 @@
 namespace Bido\User\Tests\Feature;
 
 use Bido\User\Models\User;
+use Bido\User\Services\VerifyCodeService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -41,6 +42,29 @@ class RegistrationTest extends TestCase
         $response = $this->get(route('home'));
 
         $response->assertRedirect(route('verification.notice'));
+    }
+
+    public function test_user_can_verify_account()
+    {
+        $user = User::create([
+            'name' => 'Mojtaba',
+            'email' => 'Mojtaba@yahoo.com',
+            'password' => bcrypt('Abcd@#1234'),
+        ]);
+
+        $code = VerifyCodeService::generate();
+
+        VerifyCodeService::store($user->id, $code, now()->addDay());
+
+        auth()->loginUsingId($user->id);
+
+        $this->assertAuthenticated();
+
+        $response = $this->post(route('verification.verify'), [
+            'verify_code' => $code,
+        ]);
+
+        $this->assertEquals(true, $user->fresh()->hasVerifiedEmail());
     }
 
     public function test_verified_user_can_see_home_page()
