@@ -11,7 +11,7 @@ Route::group(['namespace' => 'Bido\User\Http\Controllers', 'middleware' => 'web'
     Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 
     //logout
-    Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+    Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
     //reset password
     Route::get('/password/reset', 'Auth\ForgotPasswordController@showVerifyCodeRequestForm')->name('password.request');

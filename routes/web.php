@@ -18,4 +18,8 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/test', function (){
+//    \Spatie\Permission\Models\Permission::create(['name'=>'teach']);
+//    auth()->user()->givePermissionTo('teach');
+//    return auth()->user()->Permissions;
+});

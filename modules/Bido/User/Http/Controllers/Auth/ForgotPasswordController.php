@@ -15,7 +15,7 @@ class ForgotPasswordController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
-    | Password Reset Controller
+    | Password Reset Controllers
     |--------------------------------------------------------------------------
     |
     | This controller is responsible for handling password reset emails and
@@ -37,11 +37,11 @@ class ForgotPasswordController extends Controller
         return view('User::Front.passwords.email');
     }
 
-    public function sendVerifyCodeEmail(SendResetPasswordVerifyCodeRequest $request)
+    public function sendVerifyCodeEmail(SendResetPasswordVerifyCodeRequest $request, UserRepo $userRepo)
     {
         //todo email validation
 
-        $user = resolve(UserRepo::class)->findByEmail($request->email);
+        $user = $userRepo->findByEmail($request->email);
 
         //todo check if code exist
         if($user && !VerifyCodeService::has($user->id)){

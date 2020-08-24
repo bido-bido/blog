@@ -2,6 +2,7 @@
 
 namespace Bido\User\Models;
 
+use Spatie\Permission\Traits\HasRoles;
 use Bido\User\Notifications\VerifyMailNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -37,6 +38,7 @@ use Bido\User\Notifications\ResetPasswordRequestNotification;
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.

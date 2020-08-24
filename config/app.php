@@ -161,8 +161,6 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        \Bido\User\Providers\UserServiceProvider::class,
-
         /*
          * Package Service Providers...
          */
@@ -176,6 +174,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Bido\User\Providers\UserServiceProvider::class,
+        Bido\Dashboard\Providers\DashboardServiceProvider::class,
+        Bido\Category\Providers\CategoryServiceProvider::class,
+        Bido\RolePermissions\Providers\RolePermissionServiceProvider::class,
+        Bido\Course\Providers\CourseServiceProvider::class,
+        Bido\Media\Providers\MediaServiceProvider::class,
     ],
 
     /*
@@ -227,6 +231,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 

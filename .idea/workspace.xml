@@ -129,6 +129,8 @@
       <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
       <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
     </include_path>
   </component>
   <component name="ProjectId" id="1fuRo0JheQYJDAiyNZFMGq2DZpP" />
@@ -141,24 +143,24 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/modules/Bido/User/Http/Requests" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/modules/Bido/Course/Resources/Views" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Project\Laravel\blog\modules\Bido\User\Http\Requests" />
-      <recent name="E:\Project\Laravel\blog\modules\Bido\User\Http" />
-      <recent name="E:\Project\Laravel\blog\modules\Bido\User" />
-      <recent name="E:\Project\Laravel\blog\modules\Bido\User\Resources\Views" />
-      <recent name="E:\Project\Laravel\blog\modules\Bido\User\Tests\Unit" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Project\Laravel\blog\modules\Bido\User\Http\Requests" />
-      <recent name="E:\Project\Laravel\blog\modules\Bido\User\Mail" />
-      <recent name="E:\Project\Laravel\blog\modules\Bido\User\Notifications" />
-      <recent name="E:\Project\Laravel\blog" />
-      <recent name="E:\Project\Laravel\blog\resources\lang" />
+      <recent name="E:\Project\Laravel\blog\modules\Bido\Course\Resources\Views" />
+      <recent name="E:\Project\Laravel\blog\modules\Bido\Course\Resources" />
+      <recent name="E:\Project\Laravel\blog\modules\Bido\Course\Http" />
+      <recent name="E:\Project\Laravel\blog\modules\Bido\RolePermissions\Http\Requests" />
+      <recent name="E:\Project\Laravel\blog\modules\Bido\RolePermissions\Resources\Views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Project\Laravel\blog\modules\Bido\Media\Database\Migrations" />
+      <recent name="E:\Project\Laravel\blog\modules\Bido\Course\Database\Seeds" />
+      <recent name="E:\Project\Laravel\blog\modules\Bido\Course\Database\Migrations" />
+      <recent name="E:\Project\Laravel\blog\modules\Bido\RolePermissions\Http" />
+      <recent name="E:\Project\Laravel\blog\modules\Bido\RolePermissions\Database\Migrations" />
     </key>
   </component>
   <component name="RunManager">
@@ -184,7 +186,16 @@
       <workItem from="1597311299251" duration="16347000" />
       <workItem from="1597334976672" duration="9239000" />
       <workItem from="1597396563516" duration="25003000" />
-      <workItem from="1597488971003" duration="10361000" />
+      <workItem from="1597488971003" duration="25021000" />
+      <workItem from="1597583220510" duration="9785000" />
+      <workItem from="1597667561395" duration="9985000" />
+      <workItem from="1597747140419" duration="19971000" />
+      <workItem from="1597816780216" duration="11110000" />
+      <workItem from="1597914256512" duration="20471000" />
+      <workItem from="1597994128773" duration="13344000" />
+      <workItem from="1598089237264" duration="22537000" />
+      <workItem from="1598185425644" duration="18267000" />
+      <workItem from="1598255281509" duration="5876000" />
     </task>
     <servers />
   </component>
@@ -200,38 +211,42 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="510" y="252" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1536.824@0.0.1536.824" timestamp="1597335206385" />
-    <state x="518" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1597420258475">
+    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1598091451526">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="518" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1597420258475" />
-    <state x="499" y="168" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1597433127833">
+    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1598091451526" />
+    <state x="518" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1598103115169">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="168" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1597433127833" />
-    <state x="510" y="4" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1597229191477">
+    <state x="518" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1598103115169" />
+    <state x="499" y="168" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1597674568134">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="510" y="4" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.0.1536.824@0.0.1536.824" timestamp="1597229191477" />
-    <state x="548" y="155" key="FileChooserDialogImpl" timestamp="1597335202570">
+    <state x="499" y="168" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1597674568134" />
+    <state x="510" y="4" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1597679545998">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="548" y="155" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1597335202570" />
-    <state x="529" y="217" key="NewPhpClassDialog" timestamp="1597496611544">
+    <state x="510" y="4" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.0.1536.824@0.0.1536.824" timestamp="1597679545998" />
+    <state x="548" y="155" key="FileChooserDialogImpl" timestamp="1597853482751">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="529" y="217" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1597496611544" />
-    <state x="604" y="335" key="NewPhpFileDialog" timestamp="1597429611187">
+    <state x="548" y="155" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1597853482751" />
+    <state x="529" y="217" key="NewPhpClassDialog" timestamp="1598113983739">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="604" y="335" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1597429611187" />
+    <state x="529" y="217" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1598113983739" />
+    <state x="604" y="335" key="NewPhpFileDialog" timestamp="1597938691253">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="604" y="335" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1597938691253" />
     <state x="262" y="57" key="SettingsEditor" timestamp="1597496526888">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="262" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1597496526888" />
-    <state x="449" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1597489000786">
+    <state x="449" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1598255289366">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="449" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1597489000786" />
+    <state x="449" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1598255289366" />
     <state x="453" y="0" width="631" height="824" key="find.popup" timestamp="1597496243701">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -240,9 +255,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1597145329630" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1597227443137">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1598220414342">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1597227443137" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1598220414342" />
   </component>
 </project>
