@@ -39,6 +39,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
+            "Bido\\Common\\": "modules/Bido/Common/",
             "Bido\\User\\": "modules/Bido/User/",
             "Bido\\Dashboard\\": "modules/Bido/Dashboard/",
             "Bido\\Category\\": "modules/Bido/Category/",

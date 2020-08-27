@@ -24,4 +24,8 @@ Route::group(['namespace' => 'Bido\User\Http\Controllers', 'middleware' => 'web'
     //register
     Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
     Route::post('/register', 'Auth\RegisterController@register')->name('register');
+
+
+    Route::resource('users', 'UserController');
+    Route::post('users/{user}/add/role', 'UserController@addRole')->name('users.addRole');
 });

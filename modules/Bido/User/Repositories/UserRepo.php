@@ -3,6 +3,7 @@
 namespace Bido\User\Repositories;
 
 use Bido\User\Models\User;
+use Bido\RolePermissions\Models\Permission;
 
 class UserRepo
 {
@@ -13,11 +14,17 @@ class UserRepo
 
     public function getTeachers()
     {
-        return User::permission('teach')->get();
+        return User::permission(Permission::PERMISSION_TEACH)->get();
     }
 
     public function findById($id)
     {
         return User::find($id);
+    }
+
+    public function paginate()
+    {
+        return User::paginate();
+
     }
 }

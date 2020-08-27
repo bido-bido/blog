@@ -2,7 +2,11 @@
 
 namespace Bido\RolePermissions\Providers;
 
+use Illuminate\Support\Facades\Gate;
+use Bido\RolePermissions\Models\Role;
 use Illuminate\Support\ServiceProvider;
+use Bido\RolePermissions\Models\Permission;
+use Bido\RolePermissions\Policies\RolePermissionPolicy;
 
 class RolePermissionServiceProvider extends ServiceProvider
 {
@@ -12,6 +16,11 @@ class RolePermissionServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/../Database/Migrations');
         $this->loadViewsFrom(__DIR__.'/../Resources/Views', 'RolePermissions');
         $this->loadJsonTranslationsFrom(__DIR__.'/../Resources/Lang');
+
+        Gate::policy(Role::class, RolePermissionPolicy::class);
+        Gate::before(function ($user){
+            return $user->hasPermissionTo(Permission::PERMISSION_SUPER_ADMIN) ? true : null;
+        });
     }
 
     public function boot()

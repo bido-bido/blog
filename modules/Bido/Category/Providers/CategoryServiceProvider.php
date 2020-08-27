@@ -1,7 +1,10 @@
 <?php
 namespace Bido\Category\Providers;
 
+use Bido\Category\Models\Category;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use Bido\Category\Policies\CategoryPolicy;
 
 class CategoryServiceProvider extends ServiceProvider
 {
@@ -10,6 +13,7 @@ class CategoryServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__. '/../Routes/category_routes.php');
         $this->loadViewsFrom(__DIR__. '/../Resources/Views', 'Categories');
         $this->loadMigrationsFrom(__DIR__. '/../Database/Migrations');
+        Gate::policy(Category::class, CategoryPolicy::class);
     }
 
     public function boot()

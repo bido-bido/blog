@@ -2,6 +2,7 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/modules/Bido/Common" isTestSource="false" packagePrefix="Bido\Common\" />
       <sourceFolder url="file://$MODULE_DIR$/modules/Bido/Category" isTestSource="false" packagePrefix="Bido\Category\" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/modules/Bido/Dashboard" isTestSource="false" packagePrefix="Bido\Dashboard\" />

@@ -180,6 +180,7 @@ return [
         Bido\RolePermissions\Providers\RolePermissionServiceProvider::class,
         Bido\Course\Providers\CourseServiceProvider::class,
         Bido\Media\Providers\MediaServiceProvider::class,
+        Bido\Common\Providers\CommonServiceProvider::class,
     ],
 
     /*

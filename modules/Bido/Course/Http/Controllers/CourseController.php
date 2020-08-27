@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Bido\User\Repositories\UserRepo;
 use Bido\Course\Repositories\CourseRepo;
 use Bido\Media\Services\MediaFileService;
-use Bido\Category\Responses\AjaxResponses;
+use Bido\Common\Responses\AjaxResponses;
 use Bido\Category\Repositories\CategoryRepo;
 use Bido\Course\Http\Requests\CourseRequest;
 
@@ -15,13 +15,14 @@ class CourseController extends Controller
 {
     public function index(CourseRepo $courseRepo)
     {
+        $this->authorize('manage', Course::class);
         $courses = $courseRepo->paginate();
         return view('Courses::index', compact('courses'));
     }
 
     public function create(UserRepo $userRpo, CategoryRepo $categoryRepo)
     {
-
+        $this->authorize('create', Course::class);
         $teachers = $userRpo->getTeachers();
         $categories = $categoryRepo->all();
 
@@ -39,6 +40,7 @@ class CourseController extends Controller
     public function edit($id, CourseRepo $courseRepo, UserRepo $userRepo, CategoryRepo $categoryRepo)
     {
         $course = $courseRepo->findById($id);
+        $this->authorize('edit', $course);
         $teachers = $userRepo->getTeachers();
         $categories = $categoryRepo->all();
 
@@ -48,6 +50,7 @@ class CourseController extends Controller
     public function update($id, CourseRequest $request, CourseRepo $courseRepo)
     {
         $course = $courseRepo->findById($id);
+        $this->authorize('edit', $course);
         if($request->hasFile('image')){
             $request->request->add(['banner_id'=>MediaFileService::upload($request->file('image'))->id]);
             if($course->banner){
@@ -63,6 +66,7 @@ class CourseController extends Controller
     public function destroy($id, CourseRepo $courseRepo)
     {
         $course = $courseRepo->findById($id);
+        $this->authorize('delete', $course);
         if($course->banner){
             $course->banner->delete();
         }
@@ -74,6 +78,7 @@ class CourseController extends Controller
 
     public function accept($id, CourseRepo $courseRepo)
     {
+        $this->authorize('changeConfirmationStatus', Course::class);
         if($courseRepo->updateConfirmationStatus($id, Course::CONFIRMATION_STATUS_ACCEPTED)){
             return AjaxResponses::successResponse();
         }
@@ -83,6 +88,7 @@ class CourseController extends Controller
 
     public function reject($id, CourseRepo $courseRepo)
     {
+        $this->authorize('changeConfirmationStatus', Course::class);
         if($courseRepo->updateConfirmationStatus($id, Course::CONFIRMATION_STATUS_REJECTED)){
             return AjaxResponses::successResponse();
         }
@@ -92,6 +98,7 @@ class CourseController extends Controller
 
     public function lock($id, CourseRepo $courseRepo)
     {
+        $this->authorize('changeConfirmationStatus', Course::class);
         if($courseRepo->updateStatus($id, Course::STATUS_LOCKED)){
             return AjaxResponses::successResponse();
         }

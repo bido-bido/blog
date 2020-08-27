@@ -2,8 +2,6 @@
 
 namespace Bido\User\Http\Controllers\Auth;
 
-use Bido\User\Models\User;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Bido\User\Repositories\UserRepo;
 use Bido\User\Services\VerifyCodeService;

@@ -16,11 +16,11 @@ class ImageFileService
     {
         $fileName = uniqid();
         $extension = $file->getClientOriginalExtension();
-        $dir = 'app\public\\';
-        $file->move(storage_path($dir), $fileName . '.' . $extension);
+        $dir = 'public\\';
+        Storage::putFileAs($dir, $file,$fileName . '.' . $extension);
         $path = $dir . $fileName . '.' . $extension;
 
-        return self::resize(storage_path($path), $fileName, $extension, $dir);
+        return self::resize(Storage::path($path), $fileName, $extension, $dir);
     }
 
     public static function resize($img, $fileName, $extension, $dir)
@@ -32,7 +32,7 @@ class ImageFileService
             $images[$size] = $fileName . '_' . $size . '.' . $extension;
             $img->resize($size, null, function ($aspect) {
                 $aspect->aspectRatio();
-            })->save(storage_path($dir) . $fileName . '_' . $size . '.' . $extension);
+            })->save(Storage::path($dir) . $fileName . '_' . $size . '.' . $extension);
         }
 
         return $images;

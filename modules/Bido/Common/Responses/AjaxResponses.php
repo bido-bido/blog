@@ -1,6 +1,6 @@
 <?php
 
-namespace Bido\Category\Responses;
+namespace Bido\Common\Responses;
 
 use Illuminate\Http\Response;
 

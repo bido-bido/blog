@@ -4,6 +4,7 @@ namespace Bido\Course\Models;
 
 use Bido\User\Models\User;
 use Bido\Media\Models\Media;
+use Bido\Category\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
@@ -51,5 +52,10 @@ class Course extends Model
     public function teacher()
     {
         return $this->belongsTo(User::class, 'teacher_id', 'id');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }
