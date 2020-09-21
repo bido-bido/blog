@@ -21,19 +21,18 @@ class CreateUsersTable extends Migration
             $table->string('mobile', 14)->nullable();
             $table->string('headline')->nullable();
             $table->text('bio')->nullable();
-            $table->string('website')->nullable();
-            $table->string('linkedin')->nullable();
-            $table->string('facebook')->nullable();
-            $table->string('twitter')->nullable();
-            $table->string('youtube')->nullable();
-            $table->string('instagram')->nullable();
+            $table->string('ip')->nullable();
             $table->string('telegram')->nullable();
+            $table->bigInteger('image_id')->unsigned()->nullable();
 
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('status', ['active', 'inactive', 'ban'])->default('active');
+            $table->enum('status', \Bido\User\Models\User::$statuses)->default('active');
             $table->rememberToken();
             $table->timestamps();
+
+
+            $table->foreign('image_id')->references('id')->on('media')->onDelete('SET NULL');
         });
     }
 

@@ -1,5 +1,5 @@
 <?php
-namespace Bido\Course\Database\Seeds;
+namespace Bido\RolePermissions\Database\Seeds;
 
 use Illuminate\Database\Seeder;
 use Bido\RolePermissions\Models\Permission;

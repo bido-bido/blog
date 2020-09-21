@@ -11,7 +11,7 @@ use Bido\RolePermissions\Models\Permission;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
-use Bido\Course\Database\Seeds\RolePermissionTableSeeder;
+use Bido\RolePermissions\Database\Seeds\RolePermissionTableSeeder;
 
 class CourseTest extends TestCase
 {
@@ -56,7 +56,7 @@ class CourseTest extends TestCase
     {
         $this->actingAsUser();
         auth()->user()->givePermissionTo(Permission::PERMISSION_MANAGE_OWN_COURSES, Permission::PERMISSION_TEACH);
-        Storage::fake('local'); // if comment it not happen anything
+//        Storage::fake('local'); // if comment it not happen anything
         $response = $this->post(route('courses.store'), $this->courseData());
 
 

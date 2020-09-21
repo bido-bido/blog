@@ -4,8 +4,36 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "175f508bfb4989d9f341b182c1ddd9e6",
+    "content-hash": "3e5e268fbaebaa8e5c57c6fbf4f67f1a",
     "packages": [
+        {
+            "name": "Bido/common",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "modules/Bido/Common",
+                "reference": "c01b0c425cd92a1c37d8e1846527b116fc88a6d5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "\\Bido\\Common\\Providers\\CommonServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bido\\Common\\": "src"
+                },
+                "files": [
+                    "src/helper.php"
+                ]
+            },
+            "transport-options": {
+                "relative": true
+            }
+        },
         {
             "name": "asm89/stack-cors",
             "version": "1.3.0",
@@ -7763,7 +7791,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "bido/common": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

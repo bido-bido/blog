@@ -12,10 +12,14 @@
                 <table class="table">
                     <thead role="rowgroup">
                     <tr role="row" class="title-row">
-                        <th>آی دی</th>
-                        <th>نام</th>
+                        <th>شناسه</th>
+                        <th>نام و نام خانوادگی</th>
                         <th>ایمیل</th>
-                        <th>نقش کاربری</th>
+                        <th>شماره موبایل</th>
+                        <th>سطح کاربری</th>
+                        <th>تاریخ عضویت</th>
+                        <th>آی پی</th>
+                        <th>وضعیت حساب</th>
                         <th>عملیات</th>
                     </tr>
                     </thead>
@@ -25,17 +29,23 @@
                             <td>{{$user->id}}</td>
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
+                            <td>{{$user->mobile}}</td>
                             <td>
                                 <ul>
                                     @foreach($user->roles as $userRole)
-                                        <li>{{$userRole->name}}</li>
+                                        <li>{{$userRole->name}} <a href="" onclick="deleteItem(event, '{{route('users.removeRole', ["user"=>$user->id, "role"=>$userRole->name])}}', 'li')" class="item-delete mlg-15" title="حذف"></a> </li>
                                     @endforeach
                                     <li><a href="#select-role" rel="modal:open" onclick="setFormAction({{$user->id}})" >افزودن نقش کاربری</a></li>
                                 </ul>
                             </td>
+                            <td>{{$user->created_at}}</td>
+                            <td>{{$user->ip}}</td>
+                            <td class="confirmation_status" >{!! $user->hasVerifiedEmail()? "<span class='text-success'>تایید شده</span>": "<span class='text-error' >تایید نشده</span>"!!}</td>
                             <td>
                                 <a href="" onclick="deleteItem(event, '{{route('users.destroy', $user->id)}}')"
                                    class="item-delete mlg-15" title="حذف"></a>
+                                <a href="" onclick=" updateConfirmationStatus(event,'{{route('users.manualVerify', $user->id)}}', 'آیا از تایید این آیتم اطمینان دارید؟', 'تایید شده')" class="item-confirm mlg-15" title="تایید"></a>
+                                <a href="{{route('users.edit', $user->id)}}" class="item-edit" title="ویرایش"></a>
                             </td>
                         </tr>
                     @endforeach

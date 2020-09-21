@@ -7,6 +7,7 @@ use Bido\RolePermissions\Models\Role;
 use Illuminate\Support\ServiceProvider;
 use Bido\RolePermissions\Models\Permission;
 use Bido\RolePermissions\Policies\RolePermissionPolicy;
+use Bido\RolePermissions\Database\Seeds\RolePermissionTableSeeder;
 
 class RolePermissionServiceProvider extends ServiceProvider
 {
@@ -16,6 +17,7 @@ class RolePermissionServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/../Database/Migrations');
         $this->loadViewsFrom(__DIR__.'/../Resources/Views', 'RolePermissions');
         $this->loadJsonTranslationsFrom(__DIR__.'/../Resources/Lang');
+        \DatabaseSeeder::$seeders[] = RolePermissionTableSeeder::class;
 
         Gate::policy(Role::class, RolePermissionPolicy::class);
         Gate::before(function ($user){

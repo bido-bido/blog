@@ -11,6 +11,7 @@ use Bido\Common\Responses\AjaxResponses;
 use Bido\Category\Repositories\CategoryRepo;
 use Bido\Course\Http\Requests\CourseRequest;
 
+
 class CourseController extends Controller
 {
     public function index(CourseRepo $courseRepo)

@@ -174,13 +174,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Bido\RolePermissions\Providers\RolePermissionServiceProvider::class,
         Bido\User\Providers\UserServiceProvider::class,
         Bido\Dashboard\Providers\DashboardServiceProvider::class,
         Bido\Category\Providers\CategoryServiceProvider::class,
-        Bido\RolePermissions\Providers\RolePermissionServiceProvider::class,
         Bido\Course\Providers\CourseServiceProvider::class,
         Bido\Media\Providers\MediaServiceProvider::class,
-        Bido\Common\Providers\CommonServiceProvider::class,
     ],
 
     /*

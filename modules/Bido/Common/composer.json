@@ -1,0 +1,18 @@
+{
+  "name": "Bido/common",
+  "autoload": {
+    "psr-4": {
+      "Bido\\Common\\": "src"
+    },
+    "files": [
+      "src/helper.php"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "\\Bido\\Common\\Providers\\CommonServiceProvider"
+      ]
+    }
+  }
+}

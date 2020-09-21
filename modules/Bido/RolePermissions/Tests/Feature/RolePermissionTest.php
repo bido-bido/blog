@@ -8,7 +8,7 @@ use Bido\RolePermissions\Models\Role;
 use Bido\RolePermissions\Models\Permission;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Bido\Course\Database\Seeds\RolePermissionTableSeeder;
+use Bido\RolePermissions\Database\Seeds\RolePermissionTableSeeder;
 
 class RolePermissionTest extends TestCase
 {

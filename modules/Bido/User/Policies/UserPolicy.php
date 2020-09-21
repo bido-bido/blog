@@ -36,4 +36,28 @@ class UserPolicy
         return null;
     }
 
+    public function manualVerify($user)
+    {
+
+        if($user->hasPermissionTo(Permission::PERMISSION_MANAGE_USERS)) return true;
+
+        return null;
+    }
+
+    public function edit($user)
+    {
+
+        if($user->hasPermissionTo(Permission::PERMISSION_MANAGE_USERS)) return true;
+
+        return null;
+    }
+
+    public function removeRole($user)
+    {
+
+        if($user->hasPermissionTo(Permission::PERMISSION_MANAGE_USERS)) return true;
+
+        return null;
+    }
+
 }

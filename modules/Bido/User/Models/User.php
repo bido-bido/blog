@@ -2,6 +2,8 @@
 
 namespace Bido\User\Models;
 
+use Bido\Media\Models\Media;
+use Bido\RolePermissions\Models\Role;
 use Spatie\Permission\Traits\HasRoles;
 use Bido\User\Notifications\VerifyMailNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -40,9 +42,27 @@ class User extends Authenticatable implements MustVerifyEmail
     use Notifiable;
     use HasRoles;
 
+    const STATUS_ACTIVE = "active";
+    const STATUS_INACTIVE = "inactive";
+    const STATUS_BAN = "ban";
+
+    public static $statuses = [
+        self::STATUS_ACTIVE,
+        self::STATUS_INACTIVE,
+        self::STATUS_BAN
+    ];
+
+    public static $defaultUsers = [
+        [
+            'email'=>'admin@amdin.com',
+            'password'=>'demo',
+            'name'=>'Admin',
+            'role'=>Role::ROLE_SUPER_ADMIN
+        ],
+    ];
+
     /**
      * The attributes that are mass assignable.
-     *
      * @var array
      */
     protected $fillable = [
@@ -75,5 +95,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function sendResetPasswordNotification()
     {
         $this->notify(new ResetPasswordRequestNotification());
+    }
+
+    public function image()
+    {
+        return $this->belongsTo(Media::class, 'image_id', 'id');
     }
 }
