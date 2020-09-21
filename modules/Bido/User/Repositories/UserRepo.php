@@ -37,12 +37,6 @@ class UserRepo
             'username'=>$values->username,
             'mobile'=>$values->mobile,
             'headline'=>$values->headline,
-            'website'=>$values->website,
-            'linkedin'=>$values->linkedin,
-            'facebook'=>$values->facebook,
-            'twitter'=>$values->twitter,
-            'youtube'=>$values->youtube,
-            'instagram'=>$values->instagram,
             'telegram'=>$values->telegram,
             'status'=>$values->status,
             'bio'=>$values->bio,
@@ -51,6 +45,13 @@ class UserRepo
         if(! is_null($values->password)){
             $update['password'] = bcrypt($values->password);
         }
+        $user = User::findOrFail($userId);
+//        $user->removeRole($user->roles);// can remove one role bu I give a collection then use bellow code sync
+        $user->syncRoles([]);
+        if($values['role']){
+            $user->assignRole($values['role']);
+        }
+
         return User::where('id', $userId)->update($update);
     }
 }

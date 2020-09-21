@@ -33,10 +33,11 @@ class UserController extends Controller
         return view('User::admin.index', compact('users', 'roles'));
     }
 
-    public function edit($userId)
+    public function edit($userId, RoleRepo $roleRepo)
     {
         $user = $this->userRepo->findById($userId);
-        return view('User::admin.edit' , compact('user'));
+        $roles = $roleRepo->all();
+        return view('User::admin.edit' , compact('user', 'roles'));
     }
 
     public function update(UpdateUserRequest $request, $userId)

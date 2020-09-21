@@ -3,6 +3,7 @@
 namespace Bido\User\Models;
 
 use Bido\Media\Models\Media;
+use Bido\Course\Models\Course;
 use Bido\RolePermissions\Models\Role;
 use Spatie\Permission\Traits\HasRoles;
 use Bido\User\Notifications\VerifyMailNotification;
@@ -100,5 +101,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function image()
     {
         return $this->belongsTo(Media::class, 'image_id', 'id');
+    }
+
+    public function courses()
+    {
+        return $this->hasMany(Course::class, 'teacher_id');
     }
 }
